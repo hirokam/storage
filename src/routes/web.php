@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\StorageController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('storage');
+    return view('storage_test');
 });
 
-Route::post('/storage', [StorageController::class, 'upload']);
-Route::post('/storage/named', [StorageController::class, 'uploadNamed']);
+Route::prefix('/storage')->group(function () {
+    Route::post('/rename/to_sample', [ImageController::class, 'upload']);
+    Route::prefix('/named')->group(function () {
+        Route::post('/to_named_sample', [ImageController::class, 'uploadNamed']);
+        Route::post('/to_public', [ImageController::class, 'uploadNamedToPublic']);
+    });
+});
