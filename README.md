@@ -1,18 +1,39 @@
 # Storage機能
 画像をstorageに保存して、画面に表示させるための実装sampleです。
 
-## コマンド
-1.SSH用GitHubクローンURL : 
+## アプリケーションURL
+ローカル環境
 
-2.リポジトリの紐付け先変更 : 
+http://localhost
 
-3.dockerコンテナの生成と起動 : docker-compose up -d --build
+## 環境構築コマンド
+### GitHubリポジトリのクローン
+※SSH用GitHubクローンリンク : git@github.com:hirokam/storage.git
 
-4.PHPコンテナのコマンド操作 : docker-compose exec php bash
+1.クローン : git clone git@github.com:hirokam/storage.git
 
-5.composerの確認 : composer -v
+2.リポジトリの紐付け先変更 : git remote set-url #変更前のリンク #新しい紐付け先リンク
 
-6.
+3.リポジトリの紐付け先の変更確認 : git remote -v
+
+### dockerコンテナの生成と起動
+1.dockerコンテナの生成と起動 : docker-compose up -d --build
+
+### Laravelの環境構築
+
+1.PHPコンテナのコマンド操作 : docker-compose exec php bash
+
+2.composerのインストール : composer install
+
+3.composerのパージョン確認 : composer -v
+
+4.(.env)ファイルの作成 : cp .env.example .env ->環境変数を変更
+
+5.APP_KEYの生成 : php artisan key:generate
+
+6.マイグレーションの実行 : php artisan migrate
+
+
 
 ## 環境変数
 ### mysql
