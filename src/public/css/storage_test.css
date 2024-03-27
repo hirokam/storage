@@ -1,23 +1,24 @@
-.storage-form__to-sample-group {
-    margin-top: 50px;
+.content-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
 
-.colon {
-    padding-left: 149px;
+.frame {
+    width: 250px;
 }
 
-.storage-form__to-sample-group {
-    margin-top: 30px;
+.upload__button {
+    margin-top: 10px;
 }
 
-.storage-form__to-public-group {
-    margin-top: 30px;
-}
-
-.public-colon {
-    padding-left: 66px;
+.show-images {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .picture {
-    width: 200px;
+    margin: 10px 2.5px;
+    width: 240px;
 }

@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('storage_test');
-});
-
+Route::get('/', [ImageController::class, 'index']);
 Route::prefix('/storage')->group(function () {
     Route::post('/rename/to_sample', [ImageController::class, 'upload']);
     Route::prefix('/named')->group(function () {
